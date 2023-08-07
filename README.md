@@ -15,9 +15,9 @@ This guide assumes use of a Linux PC with Python3 installed. The Python3 /csv/ m
 
 1. Download all files from this repository and place them in the same local directory (from now on referred to as the "project directory").
 2. Open ```sip_autoconfig_csv_template.ods``` in a spreadsheet program of your choice and populate the rows with data for each extension, according to the prepopulated headings.
-3. Once ```sip_autoconfig_csv_template.ods``` has been populated, export this spreadsheet as a CSV file.
+3. Once ```sip_autoconfig_csv_template.ods``` has been populated, export this spreadsheet to the project directory as a CSV file. This is facilitated by the dedicated "Export to CSV" macro button in the spreadsheet, which exports the extension details into a file named ```sip_autoconfig_csv_template.ods.csv```.
 4. Open a terminal in the project directory and use the command ```python3 asterisk_auto_config.py``` to execute the program.
-5. The program will first ask for the filename of the input CSV file. Enter here the full name of the above exported CSV file. The default option of ```extensions.csv``` is set if this prompt is left blank.
+5. The program will first ask for the filename of the input CSV file. Enter here the full name of the above exported CSV file. The default option of ```sip_autoconfig_csv_template.ods.csv``` (to match the default export CSV filename from the above spreadsheet) is set if this prompt is left blank.
 6. The program next asks for the output filenames to be used for the generated SIP extension and dialplan configuration files. If left blank, the defaults of ```pjsip.conf``` and ```extensions.conf``` are used, respectively.
 7. Finally,the program requests details about the local and public IP addresses/subnets of the Asterisk server to which the generated configuration files will be applied. These are necessary in order to correctly set the NAT traversal parameters in the SIP config file.
 8. The program reads the contents of the generated CSV file and converts this into syntactically correct SIP endpoint and dialplan files (```pjsip.conf``` and ```extensions.conf```, if default values are set above) which can be loaded into the configuration file directory of an Asterisk server.
